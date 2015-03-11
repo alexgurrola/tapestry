@@ -12,7 +12,7 @@ class DefaultController extends Controller
      * @Route("/{furl}")
      * @Template()
      */
-    public function indexAction($furl)
+    public function indexAction($furl = null)
     {
         return array('furl' => $furl);
     }

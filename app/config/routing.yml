@@ -1,5 +1,5 @@
 vexis_core:
-    resource: @VexisCoreBundle/Controller/
+    resource: "@VexisCoreBundle/Controller/"
     type:     annotation
     prefix:   /
 
