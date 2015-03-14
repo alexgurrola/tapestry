@@ -1,2 +1,5 @@
-Hello World{% if furl is not null %} from {{ furl }}{% endif %}!
+{% extends 'base.html.twig' %}
 
+{% block body %}
+    Hello World{% if furl is not null %} from {{ furl }}{% endif %}!
+{% endblock %}

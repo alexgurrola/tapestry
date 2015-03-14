@@ -11,6 +11,8 @@ class DefaultController extends Controller
     /**
      * @Route("/{furl}")
      * @Template()
+     * @param null $furl
+     * @return array
      */
     public function indexAction($furl = null)
     {
