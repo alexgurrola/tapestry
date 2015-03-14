@@ -16,6 +16,7 @@ class DefaultController extends Controller
      */
     public function indexAction($furl = null)
     {
-        return array('furl' => $furl);
+        //return array('furl' => $furl);
+        return $this->render('Default/index.html.twig');
     }
 }
