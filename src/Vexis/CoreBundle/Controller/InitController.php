@@ -28,34 +28,38 @@ class InitController extends Controller
      * @Template()
      * @param Request $request
      * @param null $furl
-     * @return array|Response
+     * @return Response
      */
     public function indexAction(Request $request, $furl = null)
     {
-        //POST: $request->request->get('');
 
+        // set default output
         $outputData = array('furl' => $furl);
+
+        // gather variables
         $outputType = strtolower($request->query->get('output'));
 
+        // TODO: Access Database
+
+        // TODO: Run other controllers, to build output
+
+        // serialize data, if necessary
         if ($outputType) {
             $normalizer = new GetSetMethodNormalizer();
-            if ($outputType == 'json') {
-                $encoder = new JsonEncoder();
-            } elseif ($outputType == 'xml') {
-                $encoder = new XmlEncoder();
-            } else {
-                $encoder = false;
-            }
-            if ($encoder != false) {
-                $serializer = new Serializer(array($normalizer), array($encoder));
-                $serializedContent = $serializer->serialize(@$outputData ?: null, $outputType);
-            } else {
-                $serializedContent = "Output Type: {$outputType} is not supported.";
-            }
-            return new Response($serializedContent);
+            $encoder = ($outputType == 'xml') ? new XmlEncoder() : new JsonEncoder();
+            $serializer = new Serializer(array($normalizer), array($encoder));
+            $serializedContent = $serializer->serialize(@$outputData ?: null, $outputType);
+            $response = new Response($serializedContent);
+            $response->headers->set('Content-Type', ($outputType == 'xml') ? 'application/xml' : 'application/json');
         }
 
-        return $this->render('VexisCoreBundle:Init:blog.html.twig', $outputData);
+        // render template, if necessary
+        if (!isset($response)) {
+            $response = $this->render('VexisCoreBundle:Init:blog.html.twig', $outputData);
+        }
+
+        // render data
+        return $response;
 
     }
 }
