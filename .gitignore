@@ -30,8 +30,9 @@
 /app/phpunit.xml
 /phpunit.xml
 
-# Composer PHAR
+# Composer
 /composer.phar
+.composer/
 
 # PhpStorm Configuration
 /.idea/
