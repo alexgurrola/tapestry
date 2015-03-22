@@ -18,23 +18,33 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 
 /**
- * Class InitController
+ * Class LanderController
+ *
+ * This is a basic controller, for testing and such.  The output information and such will be abstracted into a set
+ * of Symfony Services and each Controller will have a specific use case.  I will not be using this as an actual
+ * LanderController in the future, rather, this is only for testing purposes while Entities and Resources are built,
+ * organized, and filtered into Functionality Bundles.
+ *
  * @package Vexis\CoreBundle\Controller
  */
-class InitController extends Controller
+class LanderController extends Controller
 {
     /**
-     * @Route("/{furl}")
+     * Route("/{furl}")
+     * param null $furl
+     *
+     * @Route("/")
      * @Template()
      * @param Request $request
-     * @param null $furl
      * @return Response
      */
-    public function indexAction(Request $request, $furl = null)
+    //public function indexAction(Request $request, $furl = null)
+    public function indexAction(Request $request)
     {
 
         // set default output
-        $outputData = array('furl' => $furl);
+        //$outputData = array('furl' => $furl);
+        $outputData = array('meow' => 'meow');
 
         // gather variables
         $outputType = strtolower($request->query->get('output'));

@@ -4,7 +4,7 @@ namespace Vexis\CoreBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class DefaultControllerTest extends WebTestCase
+class LanderControllerTest extends WebTestCase
 {
     public function testIndex()
     {
