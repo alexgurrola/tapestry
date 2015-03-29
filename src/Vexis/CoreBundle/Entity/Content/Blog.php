@@ -5,15 +5,15 @@ namespace Vexis\CoreBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Article
+ * Blog
  *
- * Articles can vary greatly in their length, usually consisting of anywhere between 500 and 2,000+ words.
- * Articles are more formal in their construction, and are detailed, informative, and fact-based.
+ * Blogs are usually 200 – 500 words in length, more casual, and provide a great way to personally connect with website readers.
+ * Blogs provide a personal, inside point of view, and are (expected to be) updated more frequently than articles.
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Vexis\CoreBundle\Entity\ArticleRepository")
+ * @ORM\Entity(repositoryClass="Vexis\CoreBundle\Entity\BlogRepository")
  */
-class Article
+class Blog
 {
     /**
      * @var integer
@@ -81,7 +81,7 @@ class Article
      * Set title
      *
      * @param string $title
-     * @return Article
+     * @return Blog
      */
     public function setTitle($title)
     {
@@ -104,7 +104,7 @@ class Article
      * Set body
      *
      * @param string $body
-     * @return Article
+     * @return Blog
      */
     public function setBody($body)
     {
@@ -127,7 +127,7 @@ class Article
      * Set time
      *
      * @param \DateTime $time
-     * @return Article
+     * @return Blog
      */
     public function setTime($time)
     {
@@ -150,7 +150,7 @@ class Article
      * Set userId
      *
      * @param integer $userId
-     * @return Article
+     * @return Blog
      */
     public function setUserId($userId)
     {
@@ -173,7 +173,7 @@ class Article
      * Set userGroup
      *
      * @param integer $userGroup
-     * @return Article
+     * @return Blog
      */
     public function setUserGroup($userGroup)
     {
@@ -196,7 +196,7 @@ class Article
      * Set userWorld
      *
      * @param integer $userWorld
-     * @return Article
+     * @return Blog
      */
     public function setUserWorld($userWorld)
     {
