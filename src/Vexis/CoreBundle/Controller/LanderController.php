@@ -65,7 +65,7 @@ class LanderController extends Controller
 
         // render template, if necessary
         if (!isset($response)) {
-            $response = $this->render('VexisCoreBundle:Init:blog.html.twig', $outputData);
+            $response = $this->render('VexisCoreBundle:Lander:blog.html.twig', $outputData);
         }
 
         // render data
