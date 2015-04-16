@@ -3,8 +3,8 @@
 security:
 
     # access control list
-    acl:
-        connection: default
+    #acl:
+        #connection: default
 
     # http://symfony.com/doc/current/book/security.html#encoding-the-user-s-password
     encoders:
