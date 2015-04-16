@@ -1,0 +1,377 @@
+<?xml version="1.0"?>
+<skipper version="3.1.2.1193" name="Vexis" mvc="Symfony2" orm="Doctrine2" uuid="2a7adeb8-fec0-4a05-97e2-b1f69047ef8a">
+  <module name="Vexis\CoreBundle\Entity" import-format="Doctrine2Php" import-path="src/Vexis/CoreBundle/Entity/Design" uuid="b6821857-52c4-4ab7-8edd-2566e82ce726">
+    <entity name="Forum" uuid="2ee899ff-ad38-4d39-a411-e7039efccb3c">
+      <field name="id" type="integer" required="true" primary="true" uuid="7518c0e2-33ff-454b-b5cc-7dc32d4a290a">
+        <orm-attributes>
+          <attribute name="column">id</attribute>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="name" type="string" size="255" uuid="a15d84e0-ba94-4780-956b-9b8c77628179">
+        <orm-attributes>
+          <attribute name="column">name</attribute>
+        </orm-attributes>
+      </field>
+      <field name="description" type="text" uuid="b078c161-58d7-4a7e-85d3-f390e075e1b1">
+        <orm-attributes>
+          <attribute name="column">description</attribute>
+        </orm-attributes>
+      </field>
+      <field name="time" type="time" uuid="39c9eef7-824c-4866-8e2d-f7f0ab7d3a49">
+        <orm-attributes>
+          <attribute name="column">time</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userId" type="integer" uuid="586804f7-fe83-473d-92b9-355879dcffcb">
+        <orm-attributes>
+          <attribute name="column">userId</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userGroup" type="integer" uuid="63766138-fbd9-4e56-b2d6-36c1bd4ca3f5">
+        <orm-attributes>
+          <attribute name="column">userGroup</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userWorld" type="integer" uuid="6b90558c-75ca-427d-a339-b17b1a478623">
+        <orm-attributes>
+          <attribute name="column">userWorld</attribute>
+        </orm-attributes>
+      </field>
+      <orm-attributes>
+        <attribute name="repository-class">Vexis\CoreBundle\Entity\ForumRepository</attribute>
+        <attribute name="export-file-name">Forum.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="Thread" uuid="a59b7d81-1c2c-471a-9f75-3c839d388446">
+      <field name="id" type="integer" required="true" primary="true" uuid="9d2bd236-80a2-47ea-b72c-86669216617b">
+        <orm-attributes>
+          <attribute name="column">id</attribute>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="time" type="time" uuid="6c22ed97-deff-4b69-a472-5983d1f34fd9">
+        <orm-attributes>
+          <attribute name="column">time</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userId" type="integer" uuid="4eb98372-8b90-4bd2-836f-64c1c89a035e">
+        <orm-attributes>
+          <attribute name="column">userId</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userGroup" type="integer" uuid="5f8f25aa-8ff1-425c-a1a1-28f7cb0bbfbc">
+        <orm-attributes>
+          <attribute name="column">userGroup</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userWorld" type="integer" uuid="46dfd701-204d-4094-8b79-bf77352676df">
+        <orm-attributes>
+          <attribute name="column">userWorld</attribute>
+        </orm-attributes>
+      </field>
+      <orm-attributes>
+        <attribute name="repository-class">Vexis\CoreBundle\Entity\ThreadRepository</attribute>
+        <attribute name="export-file-name">Thread.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="Article" uuid="2e17f280-afcd-4837-84d1-a60c5c9b0394">
+      <field name="id" type="integer" required="true" primary="true" uuid="359e3308-86db-498d-85a9-36c0e797b087">
+        <orm-attributes>
+          <attribute name="column">id</attribute>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="title" type="string" size="255" uuid="fdcc30a2-11d6-4142-b444-af4df02d76fe">
+        <orm-attributes>
+          <attribute name="column">title</attribute>
+        </orm-attributes>
+      </field>
+      <field name="body" type="text" uuid="640f7086-6328-46e8-8a06-e585907d2cdd">
+        <orm-attributes>
+          <attribute name="column">body</attribute>
+        </orm-attributes>
+      </field>
+      <field name="time" type="time" uuid="7bf9d6af-1076-412e-9304-78de544b5263">
+        <orm-attributes>
+          <attribute name="column">time</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userId" type="integer" uuid="396e2fc9-b777-4eb9-a1ec-a329eb4994b8">
+        <orm-attributes>
+          <attribute name="column">userId</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userGroup" type="integer" uuid="d51cf076-77c9-4c76-b2be-2c4d9028a435">
+        <orm-attributes>
+          <attribute name="column">userGroup</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userWorld" type="integer" uuid="bc8bd60b-4c69-407a-92b1-c48b4d5ec26d">
+        <orm-attributes>
+          <attribute name="column">userWorld</attribute>
+        </orm-attributes>
+      </field>
+      <orm-attributes>
+        <attribute name="repository-class">Vexis\CoreBundle\Entity\ArticleRepository</attribute>
+        <attribute name="export-file-name">Article.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="Blog" uuid="f1efc1a0-dd7c-4149-b00b-e99ffee35e54">
+      <field name="id" type="integer" required="true" primary="true" uuid="e689cb87-ccdf-454a-b3fc-75341d344085">
+        <orm-attributes>
+          <attribute name="column">id</attribute>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="title" type="string" size="255" uuid="8a3c6ef1-170b-44e7-8279-3de29f7c2106">
+        <orm-attributes>
+          <attribute name="column">title</attribute>
+        </orm-attributes>
+      </field>
+      <field name="body" type="text" uuid="ffbea7a3-fb18-4dab-9882-820b0f9371fa">
+        <orm-attributes>
+          <attribute name="column">body</attribute>
+        </orm-attributes>
+      </field>
+      <field name="time" type="time" uuid="76d50478-ea1e-460d-866b-28cd00255aa4">
+        <orm-attributes>
+          <attribute name="column">time</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userId" type="integer" uuid="d17b40c3-cf28-4691-b073-77498492fb33">
+        <orm-attributes>
+          <attribute name="column">userId</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userGroup" type="integer" uuid="f8f72285-7324-4c53-bd74-24c3e803dc5f">
+        <orm-attributes>
+          <attribute name="column">userGroup</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userWorld" type="integer" uuid="f6b5ae79-102e-4219-b664-26af97d08073">
+        <orm-attributes>
+          <attribute name="column">userWorld</attribute>
+        </orm-attributes>
+      </field>
+      <orm-attributes>
+        <attribute name="repository-class">Vexis\CoreBundle\Entity\BlogRepository</attribute>
+        <attribute name="export-file-name">Blog.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="Group" uuid="4a11d527-2126-4191-af85-fb2bcd97a5cc">
+      <field name="id" type="integer" required="true" primary="true" uuid="ad3aafe2-db38-4bb7-8e30-01353b874cc9">
+        <orm-attributes>
+          <attribute name="column">id</attribute>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="time" type="time" uuid="c3ee61c8-702b-460d-91d5-11771f80cbfa">
+        <orm-attributes>
+          <attribute name="column">time</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userId" type="integer" uuid="dfc2ae4c-0b05-4070-b166-c1131b20ee7f">
+        <orm-attributes>
+          <attribute name="column">userId</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userGroup" type="integer" uuid="892a9834-65fd-4fd7-8f35-21ccd39d5b26">
+        <orm-attributes>
+          <attribute name="column">userGroup</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userWorld" type="integer" uuid="42268911-051f-4c76-8992-8a26607f81f2">
+        <orm-attributes>
+          <attribute name="column">userWorld</attribute>
+        </orm-attributes>
+      </field>
+      <orm-attributes>
+        <attribute name="repository-class">Vexis\CoreBundle\Entity\GroupRepository</attribute>
+        <attribute name="export-file-name">Group.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="Limbo" uuid="0fbd12b0-9a3c-4c2e-9072-5c7123ae9fa9">
+      <field name="id" type="integer" required="true" primary="true" uuid="1421d3d2-fdb8-47f4-ab5e-0fa7f3b27092">
+        <orm-attributes>
+          <attribute name="column">id</attribute>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="time" type="time" uuid="311d4406-85e9-47eb-8f6d-0adb99aeb95e">
+        <orm-attributes>
+          <attribute name="column">time</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userId" type="integer" uuid="84050a3f-0fc4-4602-a08a-44084504880b">
+        <orm-attributes>
+          <attribute name="column">userId</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userGroup" type="integer" uuid="67d659e1-e7f8-48ce-8e4c-26a7312c044e">
+        <orm-attributes>
+          <attribute name="column">userGroup</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userWorld" type="integer" uuid="ebd544c3-e543-478b-a291-32645cce7b7b">
+        <orm-attributes>
+          <attribute name="column">userWorld</attribute>
+        </orm-attributes>
+      </field>
+      <orm-attributes>
+        <attribute name="repository-class">Vexis\CoreBundle\Entity\LimboRepository</attribute>
+        <attribute name="export-file-name">Limbo.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="Site" uuid="cdcedb5d-a03f-4515-93c4-52fa01da8929">
+      <field name="id" type="integer" required="true" primary="true" uuid="97e53aad-b2d4-4ea3-b45c-c47c773426ab">
+        <orm-attributes>
+          <attribute name="column">id</attribute>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="time" type="time" uuid="df7b4831-9f14-47c1-b735-60dfd3960f06">
+        <orm-attributes>
+          <attribute name="column">time</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userId" type="integer" uuid="b1c5b255-4caf-4a98-92a4-fa8b1b75e894">
+        <orm-attributes>
+          <attribute name="column">userId</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userGroup" type="integer" uuid="77a1dc48-93b5-47f2-9383-88c10b3b546d">
+        <orm-attributes>
+          <attribute name="column">userGroup</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userWorld" type="integer" uuid="7c050836-5c89-4d61-ac77-194db83f17f4">
+        <orm-attributes>
+          <attribute name="column">userWorld</attribute>
+        </orm-attributes>
+      </field>
+      <orm-attributes>
+        <attribute name="repository-class">Vexis\CoreBundle\Entity\SiteRepository</attribute>
+        <attribute name="export-file-name">Site.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="User" uuid="e0424b08-58c1-47a8-94e2-cef563bfcb0b">
+      <field name="id" type="integer" required="true" primary="true" uuid="1d05460f-d2a1-4da7-a9cc-455ebc4ffaf5">
+        <orm-attributes>
+          <attribute name="column">id</attribute>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="time" type="time" uuid="a80e5202-0a14-46dd-8b34-865a8fb0c5d1">
+        <orm-attributes>
+          <attribute name="column">time</attribute>
+        </orm-attributes>
+      </field>
+      <orm-attributes>
+        <attribute name="repository-class">Vexis\CoreBundle\Entity\UserRepository</attribute>
+        <attribute name="export-file-name">User.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="Layout" uuid="3a43e287-b1d3-4305-ace9-5c675c1536e6">
+      <field name="id" type="integer" required="true" primary="true" uuid="9bdb8cfd-7968-4eac-8e3e-3d3cbdef582d">
+        <orm-attributes>
+          <attribute name="column">id</attribute>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="time" type="time" uuid="600aba15-3dab-4353-a7a6-4540c4cf80f6">
+        <orm-attributes>
+          <attribute name="column">time</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userId" type="integer" uuid="204cab85-2f9d-4f3c-b53e-ebdd77f63a4a">
+        <orm-attributes>
+          <attribute name="column">userId</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userGroup" type="integer" uuid="e32fccd6-4563-4b97-b041-7e5fb9da223f">
+        <orm-attributes>
+          <attribute name="column">userGroup</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userWorld" type="integer" uuid="d0d1fafb-b3da-4d45-8c54-8695b8a447b3">
+        <orm-attributes>
+          <attribute name="column">userWorld</attribute>
+        </orm-attributes>
+      </field>
+      <orm-attributes>
+        <attribute name="repository-class">Vexis\CoreBundle\Entity\LayoutRepository</attribute>
+        <attribute name="export-file-name">Layout.php</attribute>
+      </orm-attributes>
+    </entity>
+    <entity name="Template" uuid="6dfd68b0-2493-4896-a2cd-607cc5fbf45f">
+      <field name="id" type="integer" required="true" primary="true" uuid="9c8523d4-84d9-4463-b726-243d2c0deb6d">
+        <orm-attributes>
+          <attribute name="column">id</attribute>
+          <attribute name="generator">
+            <attribute name="strategy">AUTO</attribute>
+          </attribute>
+        </orm-attributes>
+      </field>
+      <field name="time" type="time" uuid="3ce7575f-9f81-45e3-a17d-397b37514bf3">
+        <orm-attributes>
+          <attribute name="column">time</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userId" type="integer" uuid="aaffcae6-847f-4abd-acf3-c5a6a215f9c7">
+        <orm-attributes>
+          <attribute name="column">userId</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userGroup" type="integer" uuid="a9442961-95da-4700-a0e5-e156d88d3400">
+        <orm-attributes>
+          <attribute name="column">userGroup</attribute>
+        </orm-attributes>
+      </field>
+      <field name="userWorld" type="integer" uuid="4ed853b6-ddd6-4b8f-80f1-3f26ee825748">
+        <orm-attributes>
+          <attribute name="column">userWorld</attribute>
+        </orm-attributes>
+      </field>
+      <orm-attributes>
+        <attribute name="repository-class">Vexis\CoreBundle\Entity\TemplateRepository</attribute>
+        <attribute name="export-file-name">Template.php</attribute>
+      </orm-attributes>
+    </entity>
+    <orm-attributes>
+      <attribute name="namespace">Vexis\CoreBundle\Entity</attribute>
+    </orm-attributes>
+  </module>
+  <visual-data>
+    <entity uuid="0fbd12b0-9a3c-4c2e-9072-5c7123ae9fa9" bg-color="4294967295" hdr-color="4292006610" position-x="165" position-y="195" size-x="0" size-x2="105" size-y="0" size-y2="87"/>
+    <project uuid="2a7adeb8-fec0-4a05-97e2-b1f69047ef8a" size-x="0" size-x2="680" size-y="0" size-y2="585"/>
+    <entity uuid="2e17f280-afcd-4837-84d1-a60c5c9b0394" bg-color="4294967295" hdr-color="4292006610" position-x="310" position-y="40" size-x="0" size-x2="105" size-y="0" size-y2="115"/>
+    <entity uuid="2ee899ff-ad38-4d39-a411-e7039efccb3c" bg-color="4294967295" hdr-color="4292006610" position-x="20" position-y="40" size-x="0" size-x2="105" size-y="0" size-y2="115"/>
+    <entity uuid="3a43e287-b1d3-4305-ace9-5c675c1536e6" bg-color="4294967295" hdr-color="4292006610" position-x="20" position-y="350" size-x="0" size-x2="105" size-y="0" size-y2="87"/>
+    <entity uuid="4a11d527-2126-4191-af85-fb2bcd97a5cc" bg-color="4294967295" hdr-color="4292006610" position-x="20" position-y="195" size-x="0" size-x2="105" size-y="0" size-y2="87"/>
+    <entity uuid="6dfd68b0-2493-4896-a2cd-607cc5fbf45f" bg-color="4294967295" hdr-color="4292006610" position-x="165" position-y="350" size-x="0" size-x2="105" size-y="0" size-y2="87"/>
+    <entity uuid="a59b7d81-1c2c-471a-9f75-3c839d388446" bg-color="4294967295" hdr-color="4292006610" position-x="165" position-y="40" size-x="0" size-x2="105" size-y="0" size-y2="87"/>
+    <module uuid="b6821857-52c4-4ab7-8edd-2566e82ce726" bg-color="4293391335" position-x="50" position-y="50" size-x="0" size-x2="580" size-y="0" size-y2="485"/>
+    <entity uuid="cdcedb5d-a03f-4515-93c4-52fa01da8929" bg-color="4294967295" hdr-color="4292006610" position-x="310" position-y="195" size-x="0" size-x2="105" size-y="0" size-y2="87"/>
+    <entity uuid="e0424b08-58c1-47a8-94e2-cef563bfcb0b" bg-color="4294967295" hdr-color="4292006610" position-x="472" position-y="195" size-x="0" size-x2="70" size-y="0" size-y2="45"/>
+    <entity uuid="f1efc1a0-dd7c-4149-b00b-e99ffee35e54" bg-color="4294967295" hdr-color="4292006610" position-x="455" position-y="40" size-x="0" size-x2="105" size-y="0" size-y2="115"/>
+  </visual-data>
+</skipper>
