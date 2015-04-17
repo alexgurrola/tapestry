@@ -43,8 +43,8 @@ class LanderController extends Controller
     {
 
         // set default output
-        //$outputData = array('furl' => $furl);
-        $outputData = array('meow' => 'meow');
+        //$outputData = ['furl' => $furl];
+        $outputData = ['meow' => 'meow'];
 
         // gather variables
         $outputType = strtolower($request->query->get('output'));
