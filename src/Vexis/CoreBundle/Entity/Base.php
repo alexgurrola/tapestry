@@ -57,17 +57,11 @@ class Base
     private $userRoleId;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Vexis\CoreBundle\Entity\Core\User")
-     * @ORM\JoinColumn(name="userWorldId", referencedColumnName="id", nullable=true)
-     */
-    protected $userWorld;
-
-    /**
-     * @var integer
+     * @var bool
      *
      * @ORM\Column(type="integer")
      */
-    private $userWorldId;
+    private $world;
 
 
     /**
@@ -136,22 +130,22 @@ class Base
     }
 
     /**
-     * @param integer $userWorldId
+     * @param integer $world
      * @return Resource
      */
-    public function setUserWorldId($userWorldId)
+    public function setWorld($world)
     {
-        $this->userWorldId = $userWorldId;
+        $this->world = $world;
 
         return $this;
     }
 
     /**
-     * @return integer
+     * @return bool
      */
-    public function getUserWorldId()
+    public function getWorld()
     {
-        return $this->userWorldId;
+        return $this->world;
     }
 
 }

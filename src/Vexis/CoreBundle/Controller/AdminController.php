@@ -61,7 +61,7 @@ class AdminController extends Controller
 
         // render template, if necessary
         if (!isset($response)) {
-            $response = $this->render('VexisCoreBundle:Admin:dash.html.twig', $outputData);
+            $response = $this->render('VexisCoreBundle:Admin:dashboard.html.twig', $outputData);
         }
 
         // render data
