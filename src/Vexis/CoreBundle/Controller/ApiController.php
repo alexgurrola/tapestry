@@ -18,22 +18,22 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 
 /**
- * Class LanderController
+ * Class ApiController
  *
  * This is a basic controller, for testing and such.  The output information and such will be abstracted into a set
  * of Symfony Services and each Controller will have a specific use case.  I will not be using this as an actual
- * LanderController in the future, rather, this is only for testing purposes while Entities and Resources are built,
+ * ApiController in the future, rather, this is only for testing purposes while Entities and Resources are built,
  * organized, and filtered into Functionality Bundles.
  *
  * @package Vexis\CoreBundle\Controller
  */
-class LanderController extends Controller
+class ApiController extends Controller
 {
     /**
      * Route("/{furl}")
      * param null $furl
      *
-     * @Route("/")
+     * @Route("/Admin")
      * @Template()
      * @param Request $request
      * @return Response
@@ -65,7 +65,7 @@ class LanderController extends Controller
 
         // render template, if necessary
         if (!isset($response)) {
-            $response = $this->render('VexisCoreBundle:Lander:blog.html.twig', $outputData);
+            $response = $this->render('VexisCoreBundle:Admin:dash.html.twig', $outputData);
         }
 
         // render data
