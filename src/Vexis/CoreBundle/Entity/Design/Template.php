@@ -53,7 +53,7 @@ class Template
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -76,7 +76,7 @@ class Template
     /**
      * Get time
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getTime()
     {
@@ -99,7 +99,7 @@ class Template
     /**
      * Get userId
      *
-     * @return integer 
+     * @return integer
      */
     public function getUserId()
     {
@@ -122,7 +122,7 @@ class Template
     /**
      * Get userGroup
      *
-     * @return integer 
+     * @return integer
      */
     public function getUserGroup()
     {
@@ -145,7 +145,7 @@ class Template
     /**
      * Get userWorld
      *
-     * @return integer 
+     * @return integer
      */
     public function getUserWorld()
     {

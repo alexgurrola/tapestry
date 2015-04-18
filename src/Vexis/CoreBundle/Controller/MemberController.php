@@ -40,8 +40,7 @@ class MemberController extends Controller
     {
 
         // set default output
-        //$outputData = ['furl' => $furl];
-        $outputData = [];
+        $outputData = ['furl' => $furl];
 
         // gather variables
         $outputType = strtolower($request->query->get('output'));
@@ -62,7 +61,11 @@ class MemberController extends Controller
 
         // render template, if necessary
         if (!isset($response)) {
-            $response = $this->render('VexisCoreBundle:Admin:page-sign-in.html.twig', $outputData);
+            if ($furl == "Sign-Up") {
+                $response = $this->render('VexisCoreBundle:Admin:page-sign-up.html.twig', $outputData);
+            } else {
+                $response = $this->render('VexisCoreBundle:Admin:page-sign-in.html.twig', $outputData);
+            }
         }
 
         // render data

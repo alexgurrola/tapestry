@@ -40,8 +40,7 @@ class ApiController extends Controller
     {
 
         // set default output
-        //$outputData = ['furl' => $furl];
-        $outputData = [];
+        $outputData = ['furl' => $furl];
 
         // gather variables
         $outputType = strtolower($request->query->get('output'));

@@ -67,7 +67,7 @@ class Forum
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -90,7 +90,7 @@ class Forum
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -113,7 +113,7 @@ class Forum
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -136,7 +136,7 @@ class Forum
     /**
      * Get time
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getTime()
     {
@@ -159,7 +159,7 @@ class Forum
     /**
      * Get userId
      *
-     * @return integer 
+     * @return integer
      */
     public function getUserId()
     {
@@ -182,7 +182,7 @@ class Forum
     /**
      * Get userGroup
      *
-     * @return integer 
+     * @return integer
      */
     public function getUserGroup()
     {
@@ -205,7 +205,7 @@ class Forum
     /**
      * Get userWorld
      *
-     * @return integer 
+     * @return integer
      */
     public function getUserWorld()
     {

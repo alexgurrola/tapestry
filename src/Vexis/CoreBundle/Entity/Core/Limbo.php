@@ -53,7 +53,7 @@ class Limbo
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -76,7 +76,7 @@ class Limbo
     /**
      * Get time
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getTime()
     {
@@ -99,7 +99,7 @@ class Limbo
     /**
      * Get userId
      *
-     * @return integer 
+     * @return integer
      */
     public function getUserId()
     {
@@ -122,7 +122,7 @@ class Limbo
     /**
      * Get userGroup
      *
-     * @return integer 
+     * @return integer
      */
     public function getUserGroup()
     {
@@ -145,7 +145,7 @@ class Limbo
     /**
      * Get userWorld
      *
-     * @return integer 
+     * @return integer
      */
     public function getUserWorld()
     {

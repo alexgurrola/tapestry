@@ -30,13 +30,12 @@ use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 class ContentController extends Controller
 {
     /**
-     * @Route("/{furl}")
+     * @Route("/")
      * @Template()
      * @param Request $request
-     * @param null $furl
      * @return Response
      */
-    public function indexAction(Request $request, $furl = null)
+    public function indexAction(Request $request)
     {
 
         // set default output

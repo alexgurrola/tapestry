@@ -70,7 +70,7 @@ class Blog
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -93,7 +93,7 @@ class Blog
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -116,7 +116,7 @@ class Blog
     /**
      * Get body
      *
-     * @return string 
+     * @return string
      */
     public function getBody()
     {
@@ -139,7 +139,7 @@ class Blog
     /**
      * Get time
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getTime()
     {
@@ -162,7 +162,7 @@ class Blog
     /**
      * Get userId
      *
-     * @return integer 
+     * @return integer
      */
     public function getUserId()
     {
@@ -185,7 +185,7 @@ class Blog
     /**
      * Get userGroup
      *
-     * @return integer 
+     * @return integer
      */
     public function getUserGroup()
     {
@@ -208,7 +208,7 @@ class Blog
     /**
      * Get userWorld
      *
-     * @return integer 
+     * @return integer
      */
     public function getUserWorld()
     {
