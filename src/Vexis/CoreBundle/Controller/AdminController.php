@@ -30,16 +30,13 @@ use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 class AdminController extends Controller
 {
     /**
-     * Route("/{furl}")
-     * param null $furl
-     *
-     * @Route("/Admin")
+     * @Route("/Admin/{furl}")
      * @Template()
      * @param Request $request
+     * @param null $furl
      * @return Response
      */
-    //public function indexAction(Request $request, $furl = null)
-    public function indexAction(Request $request)
+    public function indexAction(Request $request, $furl = null)
     {
 
         // set default output
