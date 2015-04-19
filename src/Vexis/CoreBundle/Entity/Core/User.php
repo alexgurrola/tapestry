@@ -3,15 +3,21 @@
 namespace Vexis\CoreBundle\Entity\Core;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 
 /**
  * User
  *
  * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="Vexis\CoreBundle\Entity\Core\UserRepository")
+ * @UniqueEntity(fields="email", message="The email address you entered is already registered.")
  */
-class User implements UserInterface, \Serializable
+class User implements AdvancedUserInterface, \Serializable
 {
 
     /**
@@ -40,33 +46,43 @@ class User implements UserInterface, \Serializable
     }
 
     /**
-     * @ORM\Column(type="string", length=25, unique=true)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $username;
 
     /**
-     * @ORM\Column(type="string", length=64)
+     * @Assert\NotBlank()
+     * @Assert\Length(max = 4096)
+     *
+     * @ORM\Column(type="string", length=255)
      */
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=60, unique=true)
+     * @Assert\NotBlank()
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email.",
+     *     checkMX = true
+     * )
+     *
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $email;
 
     /**
-     * @ORM\Column(name="is_active", type="boolean")
+     * @ORM\Column(type="boolean")
      */
     private $isActive;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Vexis\CoreBundle\Entity\Core\Role", inversedBy="users")
+     * @ORM\JoinTable(name="user_roles")
+     */
+    private $roles;
 
     public function __construct()
     {
         $this->isActive = true;
-    }
-
-    public function getUsername()
-    {
-        return $this->username;
     }
 
     public function getSalt()
@@ -74,14 +90,64 @@ class User implements UserInterface, \Serializable
         return null;
     }
 
+    /**
+     * @param $username
+     * @return $this
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+        return $this;
+    }
+
+    /**
+     * @return username
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param $password
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+        return $this;
+    }
+
+    /**
+     * @return password
+     */
     public function getPassword()
     {
         return $this->password;
     }
 
+    /**
+     * @param $email
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+        return $this;
+    }
+
+    /**
+     * @return email
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
     public function getRoles()
     {
-        return array('ROLE_USER');
+        //return array('ROLE_USER');
+        return $this->roles->toArray();
     }
 
     public function eraseCredentials()
@@ -111,12 +177,12 @@ class User implements UserInterface, \Serializable
     /** @see \Serializable::serialize() */
     public function serialize()
     {
-        return serialize(array(
+        return serialize([
             $this->id,
             $this->username,
             $this->password,
             $this->isActive
-        ));
+        ]);
     }
 
     /** @see \Serializable::unserialize() */

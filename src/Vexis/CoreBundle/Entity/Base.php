@@ -4,8 +4,8 @@ namespace Vexis\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-use Vexis\CoreBundle\Entity\Core\User;
-use Vexis\CoreBundle\Entity\Core\Role;
+//use Vexis\CoreBundle\Entity\Core\User;
+//use Vexis\CoreBundle\Entity\Core\Role;
 
 /**
  * @ORM\MappedSuperclass
@@ -45,21 +45,21 @@ class Base
 
     /**
      * @ORM\ManyToOne(targetEntity="Vexis\CoreBundle\Entity\Core\Role")
-     * @ORM\JoinColumn(name="userRoleId", referencedColumnName="id", nullable=true)
+     * @ORM\JoinColumn(name="roleId", referencedColumnName="id", nullable=true)
      */
-    protected $userRole;
+    protected $role;
 
     /**
      * @var integer
      *
      * @ORM\Column(type="integer")
      */
-    private $userRoleId;
+    private $roleId;
 
     /**
      * @var bool
      *
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="boolean")
      */
     private $world;
 
@@ -111,12 +111,12 @@ class Base
     }
 
     /**
-     * @param integer $userRoleId
+     * @param integer $roleId
      * @return Resource
      */
-    public function setUserRoleId($userRoleId)
+    public function setRoleId($roleId)
     {
-        $this->userRoleId = $userRoleId;
+        $this->roleId = $roleId;
 
         return $this;
     }
@@ -124,9 +124,9 @@ class Base
     /**
      * @return integer
      */
-    public function getUserRoleId()
+    public function getRoleId()
     {
-        return $this->userRoleId;
+        return $this->roleId;
     }
 
     /**

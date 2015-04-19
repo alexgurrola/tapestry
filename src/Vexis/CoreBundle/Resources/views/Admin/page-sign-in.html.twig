@@ -82,13 +82,13 @@
             <!-- /Social Sign Up -->
 
             <div class="row">
-                <div class="col"></div>
+                <div class="col">{% if error %}{{ error.messageKey|trans(error.messageData) }}{% endif %}</div>
             </div>
 
             <!-- Username -->
             <div class="input-field">
                 <i class="fa fa-user prefix"></i>
-                <input id="username-input" name="_username" type="text" class="validate">
+                <input id="username-input" name="_username" type="text" class="validate" value="{{ last_username }}">
                 <label for="username-input">Username</label>
             </div>
             <!-- /Username -->
@@ -103,17 +103,19 @@
 
             <div class="switch">
                 <label>
-                    <input type="checkbox" checked/>
+                    <input type="checkbox" id="remember_me" name="_remember_me" checked/>
                     <span class="lever"></span>
                     Remember
                 </label>
             </div>
 
-            <button class="waves-effect waves-light btn-large z-depth-0 z-depth-1-hover">Sign In</button>
+            <input type="hidden" name="_target_path" value="/Admin/Dashboard" />
+
+            <button type="submit" class="waves-effect waves-light btn-large z-depth-0 z-depth-1-hover">Sign In</button>
         </div>
 
         <div class="links right-align">
-            <a href="page-forgot-password.html">Forgot Password?</a>
+            <a href="/Member/Recover">Forgot Password?</a>
         </div>
 
     </form>

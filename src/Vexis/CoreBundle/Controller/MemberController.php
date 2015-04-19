@@ -26,21 +26,22 @@ use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
  * organized, and filtered into Functionality Bundles.
  *
  * @package Vexis\CoreBundle\Controller
- */
+*+ */
+
 class MemberController extends Controller
 {
     /**
-     * @Route("/Member/{furl}")
+     * @Route("/Member/Sign-In", name="login_route")
      * @Template()
      * @param Request $request
-     * @param null $furl
      * @return Response
      */
-    public function indexAction(Request $request, $furl = null)
+    public function loginAction(Request $request)
     {
 
         // set default output
-        $outputData = ['furl' => $furl];
+        //$outputData = ['furl' => $furl];
+        $outputData = [];
 
         // gather variables
         $outputType = strtolower($request->query->get('output'));
@@ -61,15 +62,24 @@ class MemberController extends Controller
 
         // render template, if necessary
         if (!isset($response)) {
-            if ($furl == "Sign-Up") {
-                $response = $this->render('VexisCoreBundle:Admin:page-sign-up.html.twig', $outputData);
-            } else {
-                $response = $this->render('VexisCoreBundle:Admin:page-sign-in.html.twig', $outputData);
-            }
+            $authenticationUtils = $this->get('security.authentication_utils');
+            $outputData['error'] = $authenticationUtils->getLastAuthenticationError();
+            $outputData['last_username'] = $authenticationUtils->getLastUsername();
+            $response = $this->render('VexisCoreBundle:Admin:page-sign-in.html.twig', $outputData);
         }
 
         // render data
         return $response;
 
     }
+
+    /**
+     * @Route("/Member/Auth", name="login_check")
+     */
+    public function authAction()
+    {
+        // this controller will not be executed,
+        // as the route is handled by the Security system
+    }
+
 }

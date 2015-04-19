@@ -1,6 +1,6 @@
 <?php
 
-namespace Vexis\CoreBundle\Entity;
+namespace Vexis\CoreBundle\Entity\Categories;
 
 use Doctrine\ORM\EntityRepository;
 

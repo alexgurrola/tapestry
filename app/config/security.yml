@@ -45,6 +45,7 @@ security:
             provider: vexis
             security: true
             anonymous: true
+            #pattern: ^/
             form_login:
                 login_path: /Member/Sign-In
                 check_path: /Member/Auth

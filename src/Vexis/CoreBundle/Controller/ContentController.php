@@ -49,6 +49,17 @@ class ContentController extends Controller
 
         // TODO: Run other controllers, to build output
 
+        // Encode a hardcoded password
+        if (false) {
+            $em = $this->getDoctrine()->getManager();
+            $user = $em->getRepository('VexisCoreBundle:Core\User')->find(2);
+            $encoder = $this->get('security.password_encoder');
+            $encoded = $encoder->encodePassword($user, 'password');
+            $user->setPassword($encoded);
+            $em->persist($user);
+            $em->flush();
+        }
+
         // serialize data, if necessary
         if ($outputType) {
             $normalizer = new GetSetMethodNormalizer();
