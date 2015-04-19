@@ -36,3 +36,6 @@
 
 # PhpStorm Configuration
 /.idea/
+
+# Skipper Files
+*.Skipper
