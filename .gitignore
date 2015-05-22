@@ -39,3 +39,8 @@
 
 # Skipper Files
 *.Skipper
+
+# Web Directories
+/vhosts/
+/web/css/
+/web/js/
