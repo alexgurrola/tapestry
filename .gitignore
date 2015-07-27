@@ -30,5 +30,17 @@
 /app/phpunit.xml
 /phpunit.xml
 
-# Composer PHAR
+# Composer
 /composer.phar
+.composer/
+
+# PhpStorm Configuration
+/.idea/
+
+# Skipper Files
+*.Skipper
+
+# Web Directories
+/vhosts/
+/web/css/
+/web/js/
