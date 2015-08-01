@@ -1,4 +1,4 @@
-vexis_core:
-    resource: "@VexisCoreBundle/Controller/"
+tapestry_core:
+    resource: "@TapestryCoreBundle/Controller/"
     type:     annotation
     prefix:   /
