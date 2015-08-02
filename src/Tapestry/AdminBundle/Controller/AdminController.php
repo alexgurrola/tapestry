@@ -30,7 +30,7 @@ use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 class AdminController extends Controller
 {
     /**
-     * @Route("/Admin/{furl}")
+     * @Route("/{furl}")
      * @Template()
      * @param Request $request
      * @param null $furl

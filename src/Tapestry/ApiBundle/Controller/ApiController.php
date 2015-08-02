@@ -1,6 +1,6 @@
 <?php
 
-namespace Tapestry\CoreBundle\Controller;
+namespace Tapestry\ApiBundle\Controller;
 
 // Symfony Framework
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -18,30 +18,29 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 
 /**
- * Class MemberController
+ * Class ApiController
  *
  * This is a basic controller, for testing and such.  The output information and such will be abstracted into a set
  * of Symfony Services and each Controller will have a specific use case.  I will not be using this as an actual
- * MemberController in the future, rather, this is only for testing purposes while Entities and Resources are built,
+ * ApiController in the future, rather, this is only for testing purposes while Entities and Resources are built,
  * organized, and filtered into Functionality Bundles.
  *
- * @package Tapestry\CoreBundle\Controller
+ * @package Tapestry\ApiBundle\Controller
  */
-class MemberController extends Controller
+class ApiController extends Controller
 {
-
     /**
-     * @Route("/Member/Sign-In", name="login_route")
+     * @Route("/{furl}")
      * @Template()
      * @param Request $request
+     * @param null $furl
      * @return Response
      */
-    public function loginAction(Request $request)
+    public function indexAction(Request $request, $furl = null)
     {
 
         // set default output
-        //$outputData = ['furl' => $furl];
-        $outputData = [];
+        $outputData = ['furl' => $furl];
 
         // gather variables
         $outputType = strtolower($request->query->get('output'));
@@ -62,24 +61,11 @@ class MemberController extends Controller
 
         // render template, if necessary
         if (!isset($response)) {
-            $authenticationUtils = $this->get('security.authentication_utils');
-            $outputData['error'] = $authenticationUtils->getLastAuthenticationError();
-            $outputData['last_username'] = $authenticationUtils->getLastUsername();
-            $response = $this->render('TapestryAdminBundle::page-sign-in.html.twig', $outputData);
+            $response = $this->render('TapestryCoreBundle::base.html.twig', $outputData);
         }
 
         // render data
         return $response;
 
     }
-
-    /**
-     * @Route("/Member/Auth", name="login_check")
-     */
-    public function authAction()
-    {
-        // this controller will not be executed,
-        // as the route is handled by the Security system
-    }
-
 }
