@@ -4,12 +4,16 @@ namespace Tapestry\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-//use Tapestry\CoreBundle\Entity\Core\User;
-//use Tapestry\CoreBundle\Entity\Core\Role;
+use Tapestry\UserBundle\Entity\User;
+use Tapestry\UserBundle\Entity\Role;
 
 /**
+ * Class Base
+ *
  * @ORM\MappedSuperclass
  * @ORM\HasLifecycleCallbacks()
+ * 
+ * @package Tapestry\CoreBundle\Entity
  */
 class Base
 {
@@ -31,7 +35,9 @@ class Base
     private $time;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Tapestry\CoreBundle\Entity\Core\User")
+     * @var User
+     *
+     * @ORM\ManyToOne(targetEntity="Tapestry\UserBundle\Entity\User")
      * @ORM\JoinColumn(name="userId", referencedColumnName="id", nullable=true)
      */
     protected $user;
@@ -44,7 +50,7 @@ class Base
     private $userId;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Tapestry\CoreBundle\Entity\Core\Role")
+     * @ORM\ManyToOne(targetEntity="Tapestry\UserBundle\Entity\Role")
      * @ORM\JoinColumn(name="roleId", referencedColumnName="id", nullable=true)
      */
     protected $role;
@@ -92,6 +98,25 @@ class Base
     }
 
     /**
+     * @param User $user
+     * @return Resource
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
      * @param integer $userId
      * @return Resource
      */
@@ -108,6 +133,25 @@ class Base
     public function getUserId()
     {
         return $this->userId;
+    }
+
+    /**
+     * @param Role $role
+     * @return Resource
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    /**
+     * @return Role
+     */
+    public function getRole()
+    {
+        return $this->role;
     }
 
     /**

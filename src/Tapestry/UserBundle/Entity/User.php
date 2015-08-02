@@ -1,6 +1,6 @@
 <?php
 
-namespace Tapestry\UserBundle\Entity\Core;
+namespace Tapestry\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
@@ -11,11 +11,13 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 
 /**
- * User
+ * Class User
  *
  * @ORM\Table(name="users")
- * @ORM\Entity(repositoryClass="Tapestry\CoreBundle\Entity\Core\UserRepository")
+ * @ORM\Entity(repositoryClass="Tapestry\UserBundle\Entity\UserRepository")
  * @UniqueEntity(fields="email", message="The email address you entered is already registered.")
+ *
+ * @package Tapestry\UserBundle\Entity
  */
 class User implements AdvancedUserInterface, \Serializable
 {
@@ -75,7 +77,7 @@ class User implements AdvancedUserInterface, \Serializable
     private $isActive;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Tapestry\CoreBundle\Entity\Core\Role", inversedBy="users")
+     * @ORM\ManyToMany(targetEntity="Tapestry\UserBundle\Entity\Role", inversedBy="users")
      * @ORM\JoinTable(name="user_roles")
      */
     private $roles;

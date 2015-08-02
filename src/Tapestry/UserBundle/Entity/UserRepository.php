@@ -1,6 +1,6 @@
 <?php
 
-namespace Tapestry\UserBundle\Entity\Core;
+namespace Tapestry\UserBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 

@@ -1,15 +1,17 @@
 <?php
 
-namespace Tapestry\HostingBundle\Entity\Core;
+namespace Tapestry\HostingBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Tapestry\CoreBundle\Entity\Base;
 
 /**
- * Site
+ * Class Site
  *
  * @ORM\Table(name="sites")
- * @ORM\Entity(repositoryClass="Tapestry\HostingBundle\Entity\Core\SiteRepository")
+ * @ORM\Entity(repositoryClass="Tapestry\HostingBundle\Entity\SiteRepository")
+ *
+ * @package Tapestry\HostingBundle\Entity
  */
 class Site extends Base
 {

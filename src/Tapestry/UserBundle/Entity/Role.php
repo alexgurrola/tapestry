@@ -1,22 +1,24 @@
 <?php
 
-namespace Tapestry\UserBundle\Entity\Core;
+namespace Tapestry\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Security\Core\Role\RoleInterface;
 
 /**
- * Role
+ * Class Role
  *
  * @ORM\Table(name="roles")
- * @ORM\Entity(repositoryClass="Tapestry\CoreBundle\Entity\Core\RoleRepository")
+ * @ORM\Entity(repositoryClass="Tapestry\UserBundle\Entity\RoleRepository")
+ *
+ * @package Tapestry\UserBundle\Entity
  */
 class Role implements RoleInterface
 {
 
     /**
-     * @ORM\ManyToMany(targetEntity="Tapestry\CoreBundle\Entity\Core\User", mappedBy="roles")
+     * @ORM\ManyToMany(targetEntity="Tapestry\UserBundle\Entity\User", mappedBy="roles")
      */
     private $users;
 

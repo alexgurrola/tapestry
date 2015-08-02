@@ -26,10 +26,10 @@ use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
  * organized, and filtered into Functionality Bundles.
  *
  * @package Tapestry\CoreBundle\Controller
-*+ */
-
+ */
 class MemberController extends Controller
 {
+
     /**
      * @Route("/Member/Sign-In", name="login_route")
      * @Template()
@@ -65,7 +65,7 @@ class MemberController extends Controller
             $authenticationUtils = $this->get('security.authentication_utils');
             $outputData['error'] = $authenticationUtils->getLastAuthenticationError();
             $outputData['last_username'] = $authenticationUtils->getLastUsername();
-            $response = $this->render('TapestryCoreBundle:Admin:page-sign-in.html.twig', $outputData);
+            $response = $this->render('TapestryAdminBundle:page-sign-in.html.twig', $outputData);
         }
 
         // render data

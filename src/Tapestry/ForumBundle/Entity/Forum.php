@@ -1,15 +1,17 @@
 <?php
 
-namespace Tapestry\ForumBundle\Entity\Categories;
+namespace Tapestry\ForumBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Tapestry\CoreBundle\Entity\Base;
 
 /**
- * Forum
+ * Class Forum
  *
  * @ORM\Table(name="forums")
- * @ORM\Entity(repositoryClass="Tapestry\ForumBundle\Entity\Categories\ForumRepository")
+ * @ORM\Entity(repositoryClass="Tapestry\ForumBundle\Entity\ForumRepository")
+ *
+ * @package Tapestry\ForumBundle\Entity
  */
 class Forum extends Base
 {

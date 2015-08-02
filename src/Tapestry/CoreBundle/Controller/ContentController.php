@@ -52,7 +52,7 @@ class ContentController extends Controller
         // Encode a hardcoded password
         if (false) {
             $em = $this->getDoctrine()->getManager();
-            $user = $em->getRepository('TapestryCoreBundle:Core\User')->find(2);
+            $user = $em->getRepository('TapestryUserBundle:User')->find(2);
             $encoder = $this->get('security.password_encoder');
             $encoded = $encoder->encodePassword($user, 'password');
             $user->setPassword($encoded);
@@ -72,7 +72,7 @@ class ContentController extends Controller
 
         // render template, if necessary
         if (!isset($response)) {
-            $response = $this->render('TapestryCoreBundle:Content:blog.html.twig', $outputData);
+            $response = $this->render('TapestryBlogBundle:blog.html.twig', $outputData);
         }
 
         // render data

@@ -9,7 +9,7 @@ security:
     # http://symfony.com/doc/current/book/security.html#encoding-the-user-s-password
     encoders:
         #Symfony\Component\Security\Core\User\User: plaintext
-        Tapestry\CoreBundle\Entity\Core\User:
+        Tapestry\UserBundle\Entity\User:
             algorithm: bcrypt
             cost: 12
 
@@ -22,7 +22,7 @@ security:
     providers:
         tapestry:
             entity:
-              class: TapestryCoreBundle:Core\User
+              class: TapestryUserBundle:User
         #in_memory:
             #memory:
                 #users:

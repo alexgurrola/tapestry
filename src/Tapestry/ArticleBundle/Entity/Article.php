@@ -1,18 +1,20 @@
 <?php
 
-namespace Tapestry\ArticleBundle\Entity\Content;
+namespace Tapestry\ArticleBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Tapestry\CoreBundle\Entity\Base;
 
 /**
- * Article
+ * Class Article
  *
  * Articles can vary greatly in their length, usually consisting of anywhere between 500 and 2,000+ words.
  * Articles are more formal in their construction, and are detailed, informative, and fact-based.
  *
  * @ORM\Table(name="articles")
- * @ORM\Entity(repositoryClass="Tapestry\CoreBundle\Entity\Content\ArticleRepository")
+ * @ORM\Entity(repositoryClass="Tapestry\ArticleBundle\Entity\ArticleRepository")
+ *
+ * @package Tapestry\ArticleBundle\Entity
  */
 class Article extends Base
 {

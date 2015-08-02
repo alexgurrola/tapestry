@@ -61,7 +61,7 @@ class AdminController extends Controller
 
         // render template, if necessary
         if (!isset($response)) {
-            $response = $this->render('TapestryCoreBundle:Admin:dashboard.html.twig', $outputData);
+            $response = $this->render('TapestryAdminBundle:dashboard.html.twig', $outputData);
         }
 
         // render data

@@ -6,10 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Tapestry\CoreBundle\Entity\Base;
 
 /**
- * Limbo
+ * Class Limbo
  *
  * @ORM\Table(name="limbo")
- * @ORM\Entity(repositoryClass="Tapestry\CoreBundle\Entity\Core\LimboRepository")
+ * @ORM\Entity(repositoryClass="Tapestry\CoreBundle\Entity\LimboRepository")
+ *
+ * @package Tapestry\CoreBundle\Entity
  */
 class Limbo extends Base
 {
