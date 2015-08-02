@@ -72,7 +72,7 @@ class ContentController extends Controller
 
         // render template, if necessary
         if (!isset($response)) {
-            $response = $this->render('TapestryBlogBundle:blog.html.twig', $outputData);
+            $response = $this->render('TapestryBlogBundle::blog.html.twig', $outputData);
         }
 
         // render data

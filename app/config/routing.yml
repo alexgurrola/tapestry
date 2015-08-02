@@ -1,3 +1,34 @@
+# All bundles will have their own Sub-URL based on namespace
+tapestry_admin:
+    resource: "@TapestryAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /Admin/
+tapestry_article:
+    resource: "@TapestryArticleBundle/Controller/"
+    type:     annotation
+    prefix:   /Article/
+tapestry_blog:
+    resource: "@TapestryBlogBundle/Controller/"
+    type:     annotation
+    prefix:   /Blog/
+tapestry_design:
+    resource: "@TapestryDesignBundle/Controller/"
+    type:     annotation
+    prefix:   /Design/
+tapestry_forum:
+    resource: "@TapestryForumBundle/Controller/"
+    type:     annotation
+    prefix:   /Forum/
+tapestry_hosting:
+    resource: "@TapestryHostingBundle/Controller/"
+    type:     annotation
+    prefix:   /Hosting/
+tapestry_user:
+    resource: "@TapestryUserBundle/Controller/"
+    type:     annotation
+    prefix:   /Member/
+
+# This needs to be last, since it's essentially a catch-all
 tapestry_core:
     resource: "@TapestryCoreBundle/Controller/"
     type:     annotation

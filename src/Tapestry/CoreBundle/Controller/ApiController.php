@@ -61,7 +61,7 @@ class ApiController extends Controller
 
         // render template, if necessary
         if (!isset($response)) {
-            $response = $this->render('TapestryCoreBundle:base.html.twig', $outputData);
+            $response = $this->render('TapestryCoreBundle::base.html.twig', $outputData);
         }
 
         // render data

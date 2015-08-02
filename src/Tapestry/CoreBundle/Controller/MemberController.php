@@ -65,7 +65,7 @@ class MemberController extends Controller
             $authenticationUtils = $this->get('security.authentication_utils');
             $outputData['error'] = $authenticationUtils->getLastAuthenticationError();
             $outputData['last_username'] = $authenticationUtils->getLastUsername();
-            $response = $this->render('TapestryAdminBundle:page-sign-in.html.twig', $outputData);
+            $response = $this->render('TapestryAdminBundle::page-sign-in.html.twig', $outputData);
         }
 
         // render data

@@ -12,7 +12,7 @@ use Tapestry\UserBundle\Entity\Role;
  *
  * @ORM\MappedSuperclass
  * @ORM\HasLifecycleCallbacks()
- * 
+ *
  * @package Tapestry\CoreBundle\Entity
  */
 class Base
