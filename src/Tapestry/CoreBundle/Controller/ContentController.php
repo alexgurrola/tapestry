@@ -64,7 +64,7 @@ class ContentController extends Controller
         if ($outputType) {
             $normalizer = new GetSetMethodNormalizer();
             $encoder = ($outputType == 'xml') ? new XmlEncoder() : new JsonEncoder();
-            $serializer = new Serializer(array($normalizer), array($encoder));
+            $serializer = new Serializer([$normalizer], [$encoder]);
             $serializedContent = $serializer->serialize(@$outputData ?: null, $outputType);
             $response = new Response($serializedContent);
             $response->headers->set('Content-Type', ($outputType == 'xml') ? 'application/xml' : 'application/json');

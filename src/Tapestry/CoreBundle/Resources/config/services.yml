@@ -1,0 +1,4 @@
+services:
+#    tapestry_core.example:
+#        class: Tapestry\CoreBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

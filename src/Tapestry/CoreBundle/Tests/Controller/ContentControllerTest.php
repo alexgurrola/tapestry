@@ -4,7 +4,7 @@ namespace Tapestry\CoreBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class LanderControllerTest extends WebTestCase
+class ContentControllerTest extends WebTestCase
 {
     public function testIndex()
     {

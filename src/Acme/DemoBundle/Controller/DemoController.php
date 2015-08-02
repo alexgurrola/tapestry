@@ -19,7 +19,7 @@ class DemoController extends Controller
      */
     public function indexAction()
     {
-        return array();
+        return [];
     }
 
     /**
@@ -28,7 +28,7 @@ class DemoController extends Controller
      */
     public function helloAction($name)
     {
-        return array('name' => $name);
+        return ['name' => $name];
     }
 
     /**
@@ -51,6 +51,6 @@ class DemoController extends Controller
             return new RedirectResponse($this->generateUrl('_demo'));
         }
 
-        return array('form' => $form->createView());
+        return ['form' => $form->createView()];
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tapestry\CoreBundle\Controller;
+namespace Tapestry\AdminBundle\Controller;
 
 // Symfony Framework
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -18,19 +18,19 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 
 /**
- * Class ApiController
+ * Class AdminController
  *
  * This is a basic controller, for testing and such.  The output information and such will be abstracted into a set
  * of Symfony Services and each Controller will have a specific use case.  I will not be using this as an actual
- * ApiController in the future, rather, this is only for testing purposes while Entities and Resources are built,
+ * AdminController in the future, rather, this is only for testing purposes while Entities and Resources are built,
  * organized, and filtered into Functionality Bundles.
  *
- * @package Tapestry\CoreBundle\Controller
+ * @package Tapestry\AdminBundle\Controller
  */
-class ApiController extends Controller
+class AdminController extends Controller
 {
     /**
-     * @Route("/Api/{furl}")
+     * @Route("/Admin/{furl}")
      * @Template()
      * @param Request $request
      * @param null $furl
@@ -61,7 +61,7 @@ class ApiController extends Controller
 
         // render template, if necessary
         if (!isset($response)) {
-            $response = $this->render('TapestryCoreBundle:base.html.twig', $outputData);
+            $response = $this->render('TapestryCoreBundle:Admin:dashboard.html.twig', $outputData);
         }
 
         // render data
