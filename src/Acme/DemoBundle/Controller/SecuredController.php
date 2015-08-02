@@ -26,10 +26,10 @@ class SecuredController extends Controller
             $error = $request->getSession()->get(SecurityContext::AUTHENTICATION_ERROR);
         }
 
-        return array(
+        return [
             'last_username' => $request->getSession()->get(SecurityContext::LAST_USERNAME),
             'error'         => $error,
-        );
+        ];
     }
 
     /**
@@ -55,7 +55,7 @@ class SecuredController extends Controller
      */
     public function helloAction($name)
     {
-        return array('name' => $name);
+        return ['name' => $name];
     }
 
     /**
@@ -65,6 +65,6 @@ class SecuredController extends Controller
      */
     public function helloadminAction($name)
     {
-        return array('name' => $name);
+        return ['name' => $name];
     }
 }

@@ -1,0 +1,4 @@
+services:
+#    tapestry_article.example:
+#        class: Tapestry\ArticleBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -7,17 +7,34 @@ class AppKernel extends Kernel
 {
     public function registerBundles()
     {
-        $bundles = array(
+        $bundles = [
+
+            // Symfony Bundles
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+
+            // Doctrine Bundles
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+
+            // Sensio Bundles
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Vexis\CoreBundle\VexisCoreBundle(),
-        );
+
+            // Tapestry Bundles
+            new Tapestry\AdminBundle\TapestryAdminBundle(),
+            new Tapestry\ApiBundle\TapestryApiBundle(),
+            new Tapestry\ArticleBundle\TapestryArticleBundle(),
+            new Tapestry\BlogBundle\TapestryBlogBundle(),
+            new Tapestry\CoreBundle\TapestryCoreBundle(),
+            new Tapestry\DesignBundle\TapestryDesignBundle(),
+            new Tapestry\ForumBundle\TapestryForumBundle(),
+            new Tapestry\HostingBundle\TapestryHostingBundle(),
+            new Tapestry\UserBundle\TapestryUserBundle(),
+
+        ];
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();

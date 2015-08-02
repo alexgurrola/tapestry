@@ -9,7 +9,7 @@ security:
     # http://symfony.com/doc/current/book/security.html#encoding-the-user-s-password
     encoders:
         #Symfony\Component\Security\Core\User\User: plaintext
-        Vexis\CoreBundle\Entity\Core\User:
+        Tapestry\UserBundle\Entity\User:
             algorithm: bcrypt
             cost: 12
 
@@ -20,9 +20,9 @@ security:
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
-        vexis:
+        tapestry:
             entity:
-              class: VexisCoreBundle:Core\User
+              class: TapestryUserBundle:User
         #in_memory:
             #memory:
                 #users:
@@ -42,7 +42,7 @@ security:
             security: false
         # everything needs to maintain credentials
         default:
-            provider: vexis
+            provider: tapestry
             security: true
             anonymous: true
             #pattern: ^/

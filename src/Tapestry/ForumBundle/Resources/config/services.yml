@@ -1,0 +1,4 @@
+services:
+#    tapestry_forum.example:
+#        class: Tapestry\ForumBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
