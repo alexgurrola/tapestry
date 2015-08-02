@@ -25,6 +25,7 @@ class AppKernel extends Kernel
 
             // Tapestry Bundles
             new Tapestry\AdminBundle\TapestryAdminBundle(),
+            new Tapestry\ApiBundle\TapestryApiBundle(),
             new Tapestry\ArticleBundle\TapestryArticleBundle(),
             new Tapestry\BlogBundle\TapestryBlogBundle(),
             new Tapestry\CoreBundle\TapestryCoreBundle(),
