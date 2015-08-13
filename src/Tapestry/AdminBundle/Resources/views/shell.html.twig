@@ -1,9 +1,21 @@
 {% extends 'TapestryCoreBundle::base.html.twig' %}
 
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
 {% block stylesheets %}
     {{ parent() }}
 {% endblock %}
 
 {% block body %}
-    Hello World{% if furl is not null %} from {{ furl }}{% endif %}!
+
+    {% block main %}
+        Main Data {% if furl is defined and furl is not null %}from {{ furl }}{% endif %}
+    {% endblock %}
+
+    {% block footer %}
+        Copyright &copy; {% if company is defined and company is not null %}{{ company }}{% else %}Company{% endif %} {% if year is defined and year is not null %}{{ year }}{% else %}2014{% endif %}, All Rights Reserved.
+    {% endblock %}
+
 {% endblock %}

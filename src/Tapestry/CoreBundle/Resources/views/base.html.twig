@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>{% block title %}Tapestry: Core{% endblock %}</title>
+    <title>{% block title %}Tapestry: Make Beautiful Websites!{% endblock %}</title>
+    {% block javascripts %}
+        <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.min.js"></script>
+        {#{% javascripts '@AppBundle/Resources/public/js/*' %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}#}
+    {% endblock %}
     {% block stylesheets %}
         {% stylesheets %}
         <link type="text/css" rel="stylesheet" media="all" href="{{ asset_url }}"/>
@@ -15,13 +21,6 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
 <body>
-{% block body %}
-    {% block footer %}{% endblock %}
-{% endblock %}
-{% block javascripts %}
-    {% javascripts %}
-    <script src="{{ asset_url }}"></script>
-    {% endjavascripts %}
-{% endblock %}
+{% block body %}{% endblock %}
 </body>
 </html>
